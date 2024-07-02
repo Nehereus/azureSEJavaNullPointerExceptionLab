@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-java@v4
         with: 
           java-version: '8'
+          distribution: 'microsoft'
 
       - name: 'Restore Project Dependencies Using Mvn'
         shell: pwsh
