@@ -12,7 +12,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: myJAVANULLLAB # set this to your function app name on Azure
   PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
-  JAVA_VERSION: '8' # set this to the java version to use
+  JAVA_VERSION: '21.0.2' # set this to the java version to use
 
 jobs:
   build-and-deploy:
@@ -27,7 +27,7 @@ jobs:
       - name: Setup Java Sdk ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4
         with: 
-          java-version: '8'
+          java-version: '21.0.2'
           distribution: 'microsoft'
 
       - name: 'Restore Project Dependencies Using Mvn'
