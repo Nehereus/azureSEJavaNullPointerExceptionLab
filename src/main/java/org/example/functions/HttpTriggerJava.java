@@ -17,8 +17,8 @@ public class HttpTriggerJava {
     public HttpResponseMessage run(
             @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
             final ExecutionContext context) {
-
         context.getLogger().info("Java HTTP trigger processed a request.");
+        SubClass subClass = new SubClass();
         context.getLogger().info(subClass.getMessage());
         // Parse query parameter
         String query = request.getQueryParameters().get("name");
