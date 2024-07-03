@@ -9,7 +9,7 @@ import com.microsoft.azure.functions.*;
  */
 public class HttpTriggerJava {
 
-    private final SubClass subClass = new SubClass();
+
 
     /**
      * This function listens at endpoint "/api/HttpTriggerJava". Two ways to invoke it using "curl" command in bash:
@@ -20,6 +20,7 @@ public class HttpTriggerJava {
     public HttpResponseMessage run(
             @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
             final ExecutionContext context) {
+        private final SubClass subClass = new SubClass();
         context.getLogger().info("Java HTTP trigger processed a request.");
         context.getLogger().info(subClass.getMessage());
         // Parse query parameter
